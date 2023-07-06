@@ -90,10 +90,10 @@ docker-compose up
 - `GET /vehicles/:id`: Obtiene un vehículo por ID (Requiere autenticación).
   
 - `POST /vehicles`: Crea un nuevo vehículo (Requiere autenticación).
-  - Body: `{ "brand": "string", "model": "string", "year": "number" }`
+  - Body: `{ "make": "string", "model": "string", "year": "number" }`
   
 - `PUT /vehicles/:id`: Actualiza un vehículo por ID (Requiere autenticación).
-  - Body: `{ "brand": "string", "model": "string", "year": "number" }`
+  - Body: `{ "make": "string", "model": "string", "year": "number" }`
   
 - `DELETE /vehicles/:id`: Elimina un vehículo por ID (Requiere autenticación).
 
