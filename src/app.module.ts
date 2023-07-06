@@ -6,6 +6,7 @@ import { VehiclesModule } from './vehicles/vehicles.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { CacheModule } from '@nestjs/cache-manager';
+import redisStore from 'cache-manager-ioredis';
 
 @Module({
   imports: [
@@ -13,9 +14,8 @@ import { CacheModule } from '@nestjs/cache-manager';
       process.env.MONGO_URL || 'mongodb://localhost/my-db',
     ),
     CacheModule.register({
-      store: require('cache-manager-ioredis'),
-      host: 'localhost',
-      port: 6379,
+      store: redisStore,
+      uri: process.env.REDIS_URL || 'redis://localhost:6379',
     }),
     UsersModule,
     VehiclesModule,
